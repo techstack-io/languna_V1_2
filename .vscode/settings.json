@@ -13,13 +13,13 @@
         "activityBar.inactiveForeground": "#C385FB",
         "activityBarBadge.foreground": "#FFF5F9",
         "activityBarBadge.background": "#FF7AAB",
-        "statusBar.foreground": "#FFDAE9",
-        "statusBar.background": "#A73260",
-        "statusBarItem.hoverBackground": "#703131",
-        "statusBarItem.remoteForeground": "#FFD0B4",
-        "statusBarItem.remoteBackground": "#934A1E",
-        "statusBar.debuggingForeground": "#26000F",
-        "statusBar.debuggingBackground": "#DE6997"
+        "statusBar.foreground": "#94FFEF",
+        "statusBar.background": "#107D6D",
+        "statusBarItem.hoverBackground": "#1D5163",
+        "statusBarItem.remoteForeground": "#DAE9FF",
+        "statusBarItem.remoteBackground": "#3261A7",
+        "statusBar.debuggingForeground": "#000000",
+        "statusBar.debuggingBackground": "#46B4A3"
     },
     "jshint.enable": false,
     "standard.enable": false
