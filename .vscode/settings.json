@@ -1,0 +1,26 @@
+{
+    "files.exclude": {
+        "**/.git": false,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true
+    },
+    "explorerExclude.backup": null,
+    "workbench.colorCustomizations": {
+        "activityBar.foreground": "#580063",
+        "activityBar.background": "#FDEDFF",
+        "activityBar.inactiveForeground": "#C385FB",
+        "activityBarBadge.foreground": "#FFF5F9",
+        "activityBarBadge.background": "#FF7AAB",
+        "statusBar.foreground": "#FFDAE9",
+        "statusBar.background": "#A73260",
+        "statusBarItem.hoverBackground": "#703131",
+        "statusBarItem.remoteForeground": "#FFD0B4",
+        "statusBarItem.remoteBackground": "#934A1E",
+        "statusBar.debuggingForeground": "#26000F",
+        "statusBar.debuggingBackground": "#DE6997"
+    },
+    "jshint.enable": false,
+    "standard.enable": false
+}
