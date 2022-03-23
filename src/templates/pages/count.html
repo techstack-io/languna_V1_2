@@ -1,5 +1,149 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>Full Text:</h1>
-{{ fulltext }}
+<section class="section wrapper wrapper-full-page" style="background-color: white;" id="services">
+    <div class="content mt-xl-5">
+        <div class="container">
+          <div class="row justify-content-center mb-5">
+            <div class="col-lg-7 text-center">
+              <h2 class="fw-bold" style="font-family: 'Hubballi', cursive; text-transform: uppercase;">Our Models</h2>
+              <center>
+                <hr width="60%" />
+              </center>
+              <h3 class="title text-center">Readability Models</h3>
+             </div>
+          </div>
+          <div class="page-categories">
+            <ul class="nav nav-pills nav-pills-warning nav-pills-icons justify-content-center" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#link7" role="tablist">
+                  <i class="fa-solid fa-chart-gantt"></i>Flesch Reading Ease
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#link8" role="tablist">
+                  <i class="fa-solid fa-graduation-cap"></i>Flesch Kincaid Grade
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#link9" role="tablist">
+                  <i class="fa-solid fa-brain"></i> SMOG Index
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#link10" role="tablist">
+                  <i class="fa-solid fa-building-columns"></i> Coleman-Liau
+                </a>
+              </li>
+            </ul>
+            <div class="tab-content tab-space tab-subcategories">
+              <div class="tab-pane" id="link7">
+                <div class="card">
+                  <div class="card-header">
+                    <h4 class="card-title">Flesch Reading Ease Model</h4>
+                    <p class="card-category">
+                      Learn more
+                    </p>
+                  </div>
+                  <div class="card-body">
+                    The Flesch Reading Ease Formula is a simple approach to assess the grade-level of the reader. It’s also
+                    one of the few accurate measures around that we can rely on without too much scrutiny. This formula is
+                    best used on school text. It has since become a standard readability formula used by many US Government
+                    Agencies, including the US Department of Defense. However, primarily, we use the formula to assess the
+                    difficulty of a reading passage written in English.
+                    <hr width="20%" />
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" value=""> Select Flesch Reading Ease
+                        <span class="form-check-sign">
+                          <span class="check"></span>
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="link8">
+                <div class="card">
+                  <div class="card-header">
+                    <h4 class="card-title">Flesch-Kincaid Grade Level</h4>
+                    <p class="card-category">
+                      Learn more
+                    </p>
+                  </div>
+                  <div class="card-body">
+                    The Flesch Kincaid Grade Level is a widely used readability formula which assesses the approximate
+                    reading grade level of a text. It was developed by the US Navy who worked with the Flesch Reading Ease.
+                    If a text has a Flesch Kincaid level of 8, this means the reader needs a grade 8 level of reading or
+                    above to understand it. Even if they’re an advanced reader, it means the content is less time-consuming
+                    to read.
+                    <hr width="20%" />
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" value=""> Select Flesch-Kincaid
+                        <span class="form-check-sign">
+                          <span class="check"></span>
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="link9">
+                <div class="card">
+                  <div class="card-header">
+                    <h4 class="card-title">SMOG (FOG) Index</h4>
+                    <p class="card-category">
+                      Learn more
+                    </p>
+                  </div>
+                  <div class="card-body">
+                    The SMOG index is an acronym for Simple Measure of Gobbledygook. This readability model was developed by
+                    G. Harry McLaughlin, and was created as an improvement of other readability formulas. The FOG index, as
+                    it is also known as, estimates the years of education a person would need to understand a piece of
+                    writing, and it was created.
+                    <hr width="20%" />
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" value=""> Select SMOG Index
+                        <span class="form-check-sign">
+                          <span class="check"></span>
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="link10">
+                <div class="card">
+                  <div class="card-header">
+                    <h4 class="card-title">Coleman-Liau</h4>
+                  </div>
+                  <div class="card-body">
+                    The Coleman–Liau Readability Formula (also known as The Coleman–Liau Index) is a readability assessment
+                    model designed by linguists Meri Coleman and T. L. Liau to approximate the usability of a text. this
+                    model is one of the standards used by the U.S. Office of Education to guage thereadability of all
+                    textbooks for the public school system.
+                    <hr width="20%" />
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" value=""> Select Coleman-Liau
+                        <span class="form-check-sign">
+                          <span class="check"></span>
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+    <h2 style="font-family: 'Hubballi', cursive; text-transform: uppercase;">Full Text:</h2>
+    <h3>Your Flesch Reading Ease Score is: {{ ease }} <span style="color: red;">{{ err }}</span></h3>
+    {{ fulltext }}
+			<div class="alert alert-alert alert-dismissable" role="alert">
+            <button class="close" data-dismiss="alert">
+                    <small><sup>x</sup></small>
+                </button>
+      </div>
+</section>
+
 {% endblock %}
