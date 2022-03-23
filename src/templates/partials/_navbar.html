@@ -1,6 +1,6 @@
 {% load static %}
 <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="navbar">
-    <div class="container">
+    <div class="container mb-xl-3">
         <!-- LOGO -->
         <a class="navbar-brand logo" href="{% url 'index' %}">
             <img src="{% static 'svg/logo-img-8.svg' %}" alt="" class="logo-dark" height="48" />
@@ -19,7 +19,7 @@
                     <a href="{% url 'models' %}" class="nav-link">Models</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#features" class="nav-link">Features</a>
+                    <a href="{% url 'count' %}" class="nav-link">Count</a>
                 </li>
                 <li class="nav-item">
                     <a href="#pricing" class="nav-link">Pricing</a>
