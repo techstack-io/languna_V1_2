@@ -36,31 +36,31 @@ def count(request):
         return render(request, 'pages/count.html', {'fulltext':fulltext, 'warning':warning})
 
     elif 0 <= ease <= 10:
-        desc1 = "This text is extremely difficult to read, and is considered a scholarly article. View the complete readability table under 'Readability Models'."
+        desc1 = "this text is extremely difficult to read, and is considered a scholarly article. View the complete readability table under 'Readability Models'."
 
     elif 10 <= ease <= 30:
-        desc2 = "This text is very difficult to read, and best understood by college students. View the complete readability table under 'Readability Models'."
-        return render(request, 'pages/count.html', {'desc2':desc2, 'ease':ease})
+        desc2 = "this text is very difficult to read, and best understood by college students. View the complete readability table under 'Readability Models'."
+        return render(request, 'pages/count.html', {'fulltext':fulltext, 'desc2':desc2, 'ease':ease})
 
     elif 30 <= ease <= 50:
-        desc3 = "This text is difficult to read, and best understood by university graduates. View the complete readability table under Readability Models."
-        return render(request, 'pages/count.html', {'desc3':desc3, 'ease':ease})
+        desc3 = "this text is difficult to read, and best understood by university graduates. View the complete readability table under Readability Models."
+        return render(request, 'pages/count.html', {'fulltext':fulltext,'desc3':desc3, 'ease':ease})
 
     elif 50 <= ease <= 60:
-        desc4 = "This text is fairly difficult to read. View the complete readability table under 'Readability Models'."
-        return render(request, 'pages/count.html', {'desc4':desc4, 'ease':ease})
+        desc4 = "this text is fairly difficult to read. View the complete readability table under 'Readability Models'."
+        return render(request, 'pages/count.html', {'fulltext':fulltext,'desc4':desc4, 'ease':ease})
 
     elif 60 <= ease <= 70:
-        desc6 = "This text is easily understood by 13 to 15 year old students. If you're a content writer, this is your sweet spot. View the complete readability table under 'Readability Models'."
-        return render(request, 'pages/count.html', {'desc6':desc6, 'ease':ease})
+        desc6 = "this text is easily understood by 13 to 15 year old students. If you're a content writer, this is your sweet spot. View the complete readability table under 'Readability Models'."
+        return render(request, 'pages/count.html', {'fulltext':fulltext,'desc6':desc6, 'ease':ease})
 
     elif 70 <= ease <= 80:
-        desc7 = "This text is easily understood by 13 to 15 year old students. If you're a content writer, this is your sweet spot. View the complete readability table under 'Readability Models'."
-        return render(request, 'pages/count.html', {'desc7':desc7, 'ease':ease})
+        desc7 = "this text is easily understood by 13 to 15 year old students. If you're a content writer, this is your sweet spot. View the complete readability table under 'Readability Models'."
+        return render(request, 'pages/count.html', {'fulltext':fulltext,'desc7':desc7, 'ease':ease})
 
     elif 80 <= ease <= 100:
-        desc8 = "This text is very easily understood by 10 to 12 year old students, or a 5th grade reading level."
-        return render(request, 'pages/count.html', {'desc8':desc8, 'ease':ease})
+        desc8 = "this text is very easily understood by 10 to 12 year old students, or a 5th grade reading level."
+        return render(request, 'pages/count.html', {'fulltext':fulltext,'desc8':desc8, 'ease':ease})
     # elif ease < 0:
     #     warning = "Extremely complex texts could have a negative score. Lower and negative scores represent a text with more complexity. Typically, though, most texts will fit within a range of 10 to 100. A score between 60 and 70 would be average."
     #     return render(request, 'pages/count.html', {'fulltext':fulltext, 'warning':warning})
