@@ -136,21 +136,87 @@
             </div>
           </div>
         </div>
-        <h2 style="font-family: 'Hubballi', cursive; text-transform: uppercase;">Full Text:</h2>
-        <h3>Your Flesch Reading Ease Score is: <b>{{ ease }}</b>{{ score }}<span style="color: red;">{{ err }}</span>
-        </h3>
-        <hr>
-        <h3><b>{{ ease }}</b> means
-            {{ desc2 }}
-            {{ desc3 }}
-            {{ desc4 }}
-            {{ desc5 }}
-            {{ desc6 }}
-            {{ desc7 }}
-            {{ desc8 }}</h3>
-
-        <h4 style="color: blue;"><em>{{ difficult }} {{ score }}</em> </h4>
+        <h2 style="font-family: 'Hubballi', cursive; text-transform: uppercase;">Results:</h2>
         {{ fulltext }}
+        <div class="col-md-6">
+          <ul class="timeline timeline-simple">
+            <li class="timeline-inverted">
+              <div class="timeline-badge danger">
+                <i class="fa-solid fa-arrow-up-1-9"></i>
+              </div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <span class="badge badge-pill badge-danger pb-2 pt-0"><h6 style="color: white;">Flesch Reading Ease Score: {{ ease }}</h6></span>
+                </div>
+                <div class="timeline-body">
+                  <p>
+                    At {{ ease }}, 
+                    {{ desc2 }}
+                    {{ desc3 }}
+                    {{ desc4 }}
+                    {{ desc5 }}
+                    {{ desc6 }}
+                    {{ desc7 }}
+                    {{ desc8 }}
+                  </p>
+                </div>
+              </div>
+            </li>
+            <li class="timeline-inverted">
+              <div class="timeline-badge success">
+                <i class="fa-solid fa-hourglass-start"></i>
+              </div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <span class="badge badge-pill badge-success pb-2 pt-0"><h6 style="color: white;">Reading Time</span>
+                </div>
+                <div class="timeline-body">
+                  This text takes ~ {{ rtime }} seconds to read
+                </div>
+              </div>
+            </li>
+            <!-- <p>
+              <a href="https://plotly.com/~stackmetric/25/?share_key=2VYK6a9u7CGVLcQ4ydjQty" target="_blank" title="flesch_P10_college" style="display: block; text-align: center;"><img src="https://plotly.com/~stackmetric/25.png?share_key=2VYK6a9u7CGVLcQ4ydjQty" alt="flesch_P10_college" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plotly.com/404.png';" /></a>
+              <script data-plotly="stackmetric:25" sharekey-plotly="2VYK6a9u7CGVLcQ4ydjQty" src="https://plotly.com/embed.js" async></script>
+            </p> -->
+            <li class="timeline-inverted">
+              <div class="timeline-badge info">
+                <i class="material-icons">fingerprint</i>
+              </div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <span class="badge badge-pill badge-info">Another Title</span>
+                </div>
+                <div class="timeline-body">
+                  <p>Called I Miss the Old Kanye That’s all it was Kanye And I love you like Kanye loves Kanye Famous viewing @ Figueroa and 12th in downtown LA 11:10PM</p>
+                  <p>What if Kanye made a song about Kanye Royère doesn't make a Polar bear bed but the Polar bear couch is my favorite piece of furniture we own It wasn’t any Kanyes Set on his goals Kanye</p>
+                  <hr>
+                  <div class="dropdown pull-left">
+                    <button type="button" class="btn btn-round btn-info dropdown-toggle" data-toggle="dropdown">
+                      <i class="material-icons">build</i>
+                      <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                      <li>
+                        <a href="#action">Action</a>
+                      </li>
+                      <li>
+                        <a href="#action">Another action</a>
+                      </li>
+                      <li>
+                        <a href="#here">Something else here</a>
+                      </li>
+                      <li class="divider"></li>
+                      <li>
+                        <a href="#link">Separated link</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
         <div class="alert alert-alert alert-dismissable" role="alert">
           <button class="close" data-dismiss="alert">
             <small><sup>x</sup></small>
