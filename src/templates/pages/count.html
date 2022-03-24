@@ -137,7 +137,10 @@
               </div>
             </div>
     <h2 style="font-family: 'Hubballi', cursive; text-transform: uppercase;">Full Text:</h2>
-    <h3>Your Flesch Reading Ease Score is: {{ ease }} <span style="color: red;">{{ err }}</span></h3>
+    <h3>Your Flesch Reading Ease Score is: <b>{{ ease }}</b>{{ score }}<span style="color: red;">{{ err }}</span></h3>
+    <hr>
+    <h4 style="color: blue;">{{ ease }} means {{ desc2 }} {{ desc3 }} {{ desc4 }} {{ desc5 }} {{ desc6 }} {{ desc7 }} {{ desc8 }}</h4>
+    <h4 style="color: blue;"><em>{{ difficult }} {{ score }}</em> </h4>
     {{ fulltext }}
 			<div class="alert alert-alert alert-dismissable" role="alert">
             <button class="close" data-dismiss="alert">
