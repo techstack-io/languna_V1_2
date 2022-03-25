@@ -9,19 +9,26 @@
                 <br>
                 <h2 class="fw-bold mb-4" style="font-family: 'Hubballi', cursive; text-transform: uppercase;">MODELS</h2>
                 <hr>
-                <p class="text-muted mb-5">Et harum quidem rerum facilis est expedita distinctio temporecum soluta nobisest eligendi optio cumque nihil impedit quo minus maxime.</p>
                 <div>
                     <form action="{% url 'count' %}">
                         <div class="row">
                             <div class="mb-4 pb-2">
-                                <label for="comments" class="text-muted form-label">Message</label>
+                                <label for="comments" class="text-muted form-label"><b>For readability models:</b>
+                                    <br>
+                                    Paste text with 1,000 characters or more. 
+                                    <br>
+                                    For summarization, paste text of 1,000 to 10,000 characters.
+                                </label>
                                 <textarea name="fulltext" cols="40" rows="5" class="form-control"
-                                    placeholder="Enter message...">
+                                    placeholder="Paste text...">
                                 </textarea>
                             </div>
                             <button type="submit" value="count" id="submit" class="btn"
                                 style="color: white; background-color: #755FA8">GO
                             </button>
+                            <button type="submit" value="summarize" id="submit" name="summarize" class="btn"
+                            style="color: white; background-color: #755FA8">Summarize
+                        </button>
                         </div>
                     </form>
                 </div>

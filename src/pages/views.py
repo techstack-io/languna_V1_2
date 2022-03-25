@@ -25,13 +25,13 @@ def count(request):
     fulltext = request.GET['fulltext']
     # wordlist = fulltext.split()
     # return render(request, 'pages/count.html', {'fulltext':fulltext, 'count':len(wordlist)})
-
     ease = textstat.flesch_reading_ease(fulltext)
     rtime = textstat.reading_time(fulltext, ms_per_char=14.69)
+    err = 'ERROR'
 
     if len(fulltext) == 0 and len(fulltext) < 1000:
-        err = 'ERROR'
         return render(request, 'pages/count.html', {'fulltext':'Please enter a minimum of 1,000 characters', 'err':err})
+    
     elif ease < 0:
         warning = "Extremely complex texts could have a negative score. Lower and negative scores represent a text with more complexity. Typically, though, most texts will fit within a range of 10 to 100. A score between 60 and 70 would be average."
         return render(request, 'pages/count.html', {'fulltext':fulltext, 'warning':warning})
@@ -56,8 +56,29 @@ def count(request):
         desc8 = "this text is very easily understood by 10 to 12 year old students, or a 5th grade reading level."
         return render(request, 'pages/count.html', {'fulltext':fulltext,'desc8':desc8, 'ease':ease, 'rtime':rtime})
 
+def summarize(request):
+    # if (request.GET.get('summarize')):
+        nltk.download('punkt')
+        nltk.download('stopwords')
+        # Raw Text
+        text = re.sub(r'\[[0-9]*\]', ' ', fulltext)
+        text = re.sub(r'\s+', ' ', fulltext)
+        # Clean Text
+        clean_text = text.lower()
+        clean_text = re.sub(r'\W', ' ', clean_text)
+        clean_text = re.sub(r'\d', ' ', clean_text)
+        clean_text = re.sub(r'\s+', ' ', clean_text)
+        stopwords = nltk.corpus.stopwords.words('english')
+        word_frequency = nltk.FreqDist(nltk.word_tokenize
+                                        (clean_text))
+        # Word Dictionary
+        word2count = {}
+        for word in nltk.word_tokenize(clean_text):
+            if word not in stopwords:
+                if word not in word2count.keys():
+                    word2count[word] = 1
+                else:
+                    word2count[word] += 1
 
-
-
-
-    
+        highest_frequency = max(word2count.values())
+        return render(request, 'pages/count.html', {'highest_frequency':highest_frequency})
