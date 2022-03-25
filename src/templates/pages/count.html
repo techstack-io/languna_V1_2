@@ -185,11 +185,39 @@
               </div>
               <div class="timeline-panel">
                 <div class="timeline-heading">
-                  <span class="badge badge-pill badge-info">Summary</span>
+                  <span class="badge badge-pill badge-info pb-2 pt-0"><h6 style="color: white;">Summary</span>
                 </div>
                 <div class="timeline-body">
                   <p>{{ summary }}</p>
-                  <hr>
+                  <p>{{ highest_frequency }}</p>
+                  <p>{{ no_of_words }}</p>
+                </div>
+              </div>
+            </li>
+            <li class="timeline-inverted">
+              <div class="timeline-badge primary">
+                <i class="fa-solid fa-info"></i>
+              </div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <span class="badge badge-pill badge-primary pb-2 pt-0"><h6 style="color: white;">Keywords</span>
+                </div>
+                <div class="timeline-body">
+                  <ul>
+                    <li>
+                      Word Count: {{ no_of_words }} 
+                    </li>
+                    <br>
+                    <li>
+                      Keywords in order of how frequently they appear: 
+                      <br>
+                      <em>{{ new_lkeys }}</em>
+                    </li>
+                    <br>
+                    <li>
+                      The most frequent word appears {{ highest_frequency }}. For SEO, a good rule of thumb is that a keyword should not appear more than once per 200 words of copy.
+                    </li>
+                  </ul>
                 </div>
               </div>
             </li>
