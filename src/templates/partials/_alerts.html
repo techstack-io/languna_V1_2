@@ -1,0 +1,28 @@
+<script src="https://kit.fontawesome.com/4cdcba7205.js" crossorigin="anonymous"></script>
+{% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-rose alert-with-icon alert-disemble"  role='alert' data-notify="container">
+        <i class="fa-solid fa-bell"></i>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <i class="fa-solid fa-square-xmark"></i>
+        </button>
+        <strong>
+            {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                ERROR
+            {% else %}
+                {{ message.tags|title }}
+            {% endif %}
+        </strong>
+            {{ message }}
+        <span data-notify="message"></span>
+    </div>
+    {% endfor %}
+{% endif %}
+
+<!-- <div class="alert alert-rose alert-with-icon" data-notify="container">
+    <i class="material-icons" data-notify="icon">notifications</i>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <i class="material-icons">close</i>
+    </button>
+    <span data-notify="message">This is a notification with close button and icon and is made with ".alert-rose". You can see that the icon and the close button are always vertically aligned. This is a beautiful notification. So you don't have to worry about the style.</span>
+  </div> -->
