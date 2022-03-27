@@ -81,9 +81,8 @@ def count(request):
                     vkeys = list(val)
 
         highest_frequency = max(word2count.values())
-        wfhigh = max(word_frequency.keys())
 
-        return render(request, 'pages/count.html', {'rtime':rtime, 'fre':fre, 'fkg':fkg, 'fog':fog, 'smog':smog, 'ari':ari, 'no_of_words':len(wordlist), 'highest_frequency':highest_frequency, 'sentlist':sentlist})
+        return render(request, 'pages/count.html', {'rtime':rtime, 'fre':fre, 'fkg':fkg, 'fog':fog, 'smog':smog, 'ari':ari, 'no_of_words':len(wordlist), 'highest_frequency':highest_frequency, 'sentlist':sentlist, 'new_lkeys':new_lkeys})
 
     # if 0 <= ease <= 50:
     #     return render(request, 'pages/count.html', {'fulltext':fulltext, 'ease':ease})
