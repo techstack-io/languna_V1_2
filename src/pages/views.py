@@ -27,9 +27,63 @@ def count(request):
         messages.error(request, 'Please enter a minimum of 1,000 characters')
         return redirect('models')
     else:
-        ease = textstat.flesch_reading_ease(fulltext)
+        nltk.download('punkt')
+        nltk.download('stopwords')
+        # ---------------------------------------------------------------------------- #
         rtime = textstat.reading_time(fulltext, ms_per_char=14.69)
-        return render(request, 'pages/count.html', {'ease':ease})
+        fre = textstat.flesch_reading_ease(fulltext)
+        fkg = textstat.flesch_kincaid_grade(fulltext)
+        fog = textstat.gunning_fog(fulltext)
+        smog = textstat.smog_index(fulltext)
+        ari = textstat.automated_readability_index(fulltext)
+        cli = textstat.coleman_liau_index(fulltext)
+        lwf = textstat.linsear_write_formula(fulltext)
+        wordlist = fulltext.split()
+        sentlist = textstat.sentence_count(fulltext)
+        # raw text
+        text = re.sub(r'\[[0-9]*\]', ' ', fulltext) 
+        text = re.sub(r'\s+', ' ', fulltext) 
+        # -------------------------------- Preprocess -------------------------------- #
+        # clean text
+        clean_text = text.lower()
+        clean_text = re.sub(r'\W', ' ', clean_text)
+        clean_text = re.sub(r'\d', ' ', clean_text)
+        clean_text = re.sub(r'\s+', ' ', clean_text)
+        stopwords = nltk.corpus.stopwords.words('english')
+        # ------------------------------ Word Frequency ------------------------------ #
+        word_frequency = nltk.FreqDist(nltk.word_tokenize(clean_text))
+        # Word dictionary
+        word2count = {}
+        for word in nltk.word_tokenize(clean_text):
+            if word not in stopwords:
+                if word not in word2count.keys():
+                    word2count[word] = 1
+                else:
+                    word2count[word] += 1
+                    # Convert word2count dict to a list
+                    dict2list=list(word2count.items())
+                    # Sort list in descending order
+                    dict2list = sorted(word2count.items(), key=lambda x:x[1], reverse=True)
+                    # First 7 words in sorted list of weighted words in descending order
+                    weighted_words_des = dict2list[:7]
+                    # --- Dicts
+                    # Covert sorted list back to dict (this is the complete dict)
+                    sortdict = dict(dict2list)
+                    # Sorted dict
+                    d=dict(weighted_words_des)
+                    # Separate keys and values
+                    keys = d.keys()
+                    val = d.values()
+                    # Convert keys and values into a list
+                    # This will be our x and y axis for our chart
+                    lkeys = list(keys)
+                    new_lkeys = str(lkeys)[1:-1]
+                    vkeys = list(val)
+
+        highest_frequency = max(word2count.values())
+        wfhigh = max(word_frequency.keys())
+
+        return render(request, 'pages/count.html', {'rtime':rtime, 'fre':fre, 'fkg':fkg, 'fog':fog, 'smog':smog, 'ari':ari, 'no_of_words':len(wordlist), 'highest_frequency':highest_frequency, 'sentlist':sentlist})
 
     # if 0 <= ease <= 50:
     #     return render(request, 'pages/count.html', {'fulltext':fulltext, 'ease':ease})

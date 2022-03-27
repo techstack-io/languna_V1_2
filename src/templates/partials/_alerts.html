@@ -1,9 +1,32 @@
-<script src="https://kit.fontawesome.com/4cdcba7205.js" crossorigin="anonymous"></script>
+
+{% if messages %}
+{% for message in messages %}
+  <div id="message" class="container">
+    <div style="color: #EA2C6D;">
+        <i class="fa-solid fa-bell"></i>
+        <br>
+      </div>
+    <div class="alert alert-rose alert-{{ message.tags }} alert-dismissible text-center" role="alert">
+      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button>
+      <strong>
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+          Error:
+        {% else %}
+          {{ message.tags|title }}
+        {% endif %}
+      </strong>
+      {{ message }}
+    </div>
+  </div>
+{% endfor %}
+{% endif %}
+
+<!-- <script src="https://kit.fontawesome.com/4cdcba7205.js" crossorigin="anonymous"></script>
 {% if messages %}
     {% for message in messages %}
-    <div class="alert alert-{{ message.tags }} alert-rose alert-with-icon alert-disemble"  role='alert' data-notify="container">
+    <div class="alert alert-{{ message.tags }} alert-dismissible alert-rose alert-with-icon" role='alert' data-notify="container">
         <i class="fa-solid fa-bell"></i>
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close" aria-hidden="true">
             <i class="fa-solid fa-square-xmark"></i>
         </button>
         <strong>
@@ -17,7 +40,7 @@
         <span data-notify="message"></span>
     </div>
     {% endfor %}
-{% endif %}
+{% endif %} -->
 
 <!-- <div class="alert alert-rose alert-with-icon" data-notify="container">
     <i class="material-icons" data-notify="icon">notifications</i>

@@ -141,16 +141,63 @@
         <div class="col-md-6">
           <ul class="timeline timeline-simple">
             <li class="timeline-inverted">
-              <div class="timeline-badge danger">
+              <div class="timeline-badge primary">
                 <i class="fa-solid fa-arrow-up-1-9"></i>
               </div>
               <div class="timeline-panel">
                 <div class="timeline-heading">
-                  <span class="badge badge-pill badge-danger pb-2 pt-0"><h6 style="color: white;">Flesch Reading Ease Score: {{ ease }}</h6></span>
+                  <table class="table text-primary">
+                    <thead class=" text-primary"></thead>
+                    <tr>
+                      Flesch Reading Ease Score &nbsp
+                      <span class="badge badge-pill badge-dark pb-2 pt-0"><h6 style="color: white;">{{ fre }}</h6></span>  
+                    </tr>
+                    <br>
+                    <br>
+                    <tr>
+                      Flesch Kincaid Grade Level &nbsp
+                      <span class="badge badge-pill badge-dark pb-2 pt-0"><h6 style="color: white;">{{ fkg }}</h6></span>
+                    </tr>
+                    <br>
+                    <br>
+                    <tr>
+                      Automated Readability Index &nbsp
+                      <span class="badge badge-pill badge-dark pb-2 pt-0"><h6 style="color: white;">{{ ari }}</h6></span>
+                    </tr>
+                    <tr>
+                    <br>
+                    <br>
+                      FOG &nbsp
+                      <span class="badge badge-pill badge-dark pb-2 pt-0"><h6 style="color: white;">{{ fog }}</h6></span>
+                    </tr>
+                    <br>
+                    <br>
+                    <tr>
+                      SMOG &nbsp
+                      <span class="badge badge-pill badge-dark pb-2 pt-0"><h6 style="color: white;">{{ smog }}</h6></span>
+                    </tr>
+                    <br>
+                    <br>
+                    <hr style="opacity: .1;">
+                    <tr>This text takes ~ {{ rtime }} seconds to read</tr>
+                    <br>
+                    <br>
+                    <tr>This text has <b>{{ no_of_words }}</b> words. A blog post should contain at least 300 words in order to rank well in the search engines. But long posts (1000 words or more) will rank more easily than short posts. CoSchedule found posts with around 2,500 words typically rank the best.</tr>
+                    <br>
+                    <br>
+                    <tr>
+                      The most frequent word appears <b>{{ highest_frequency }}</b> times. For SEO, a good rule of thumb is that a keyword should not appear more than once per 200 words of copy.
+                    </tr>
+                    <br>
+                    <br>
+                    <tr>There are an average of <b>{{ sentlist }}</b> words in the sentences. A well-written sentence should have 15-20 words on average. Using simple and short sentences will help more people to understand your content. But restrain from using uniform sentence lengths if you don't want your writings to be choppy and without flow.</tr>
+                  </table>
+                  <br>
+                  <br>
                 </div>
                 <div class="timeline-body">
                   <p>
-                    At {{ ease }}, 
+                    At {{ fre }}, 
                     {{ desc2 }}
                     {{ desc3 }}
                     {{ desc4 }}

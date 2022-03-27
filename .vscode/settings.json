@@ -8,13 +8,13 @@
     },
     "explorerExclude.backup": null,
     "workbench.colorCustomizations": {
-        "statusBar.foreground": "#A1FFB0",
-        "statusBar.background": "#18862A",
-        "statusBarItem.hoverBackground": "#155D3A",
-        "statusBarItem.remoteForeground": "#93FFF2",
-        "statusBarItem.remoteBackground": "#107C6F",
-        "statusBar.debuggingForeground": "#000000",
-        "statusBar.debuggingBackground": "#4EBC61"
+        "statusBar.foreground": "#FAF3FF",
+        "statusBar.background": "#7C39AF",
+        "statusBarItem.hoverBackground": "#672A6B",
+        "statusBarItem.remoteForeground": "#FFE2F6",
+        "statusBarItem.remoteBackground": "#A32F7D",
+        "statusBar.debuggingForeground": "#22003D",
+        "statusBar.debuggingBackground": "#B270E6"
     },
     "jshint.enable": false,
     "standard.enable": false
